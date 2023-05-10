@@ -74,5 +74,20 @@ section {
   font-size: 8.8rem;
   color: #ffffff;
 
-  display
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.temp .number .maxmin {
+  font-size: 2rem;
+}
+.temp .number .maxmin span {
+  color: #c2bff4;
+}
+
+.celsius {
+  font-size: 2.4rem;
+  color: #dad9f7;
+  margin-top: 1.5rem;
 }
