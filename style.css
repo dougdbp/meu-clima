@@ -21,6 +21,9 @@ main {
 
   display: grid;
   place-content: center;
+
+  padding: 6.4rem;
+  gap: 2.4rem;
 }
 
 section {
@@ -29,10 +32,9 @@ section {
   border-radius: 1rem;
 }
 
+/*Temperature Now*/
 .temperature-now {
   background: url(./assets/bg-temp-now.jpeg);
-  width: 48rem;
-  height: 48rem;
   position: relative;
   display: grid;
   grid-template-rows: max-content 1fr max-content;
@@ -90,4 +92,176 @@ section {
   font-size: 2.4rem;
   color: #dad9f7;
   margin-top: 1.5rem;
+}
+
+.statistics {
+  padding: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.stats {
+  flex: 1;
+  padding: 1.2rem 1.6rem;
+  background: rgba(102, 96, 200, 0.6);
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.stats .info {
+  color: #e7e6fb;
+}
+
+.stats .info h5 span,
+.stats .info p {
+  font-size: 1.2rem;
+}
+
+.stats .info h5 {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+/*Air quality*/
+.air-quality {
+  font-weight: 700;
+  text-align: center;
+  display: grid;
+}
+
+h2.title {
+  font-size: 1.6rem;
+  color: #dad8f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3.2rem;
+}
+
+.air-quality .good {
+  margin-top: 3.2rem;
+  font-size: 1.8rem;
+  color: #87ebcd;
+}
+
+.air-quality > .number {
+  margin-top: 0.4rem;
+  font-size: 4rem;
+  color: #e7e6fb;
+}
+
+.air-quality .info {
+  display: flex;
+  align-items: center;
+
+  margin-top: 3.2rem;
+  padding: 0 1.6rem 1.6rem;
+}
+
+.air-quality .info .number {
+  flex: 1;
+}
+
+.air-quality .info p {
+  color: #87ebcd;
+  font-size: 1.4rem;
+}
+
+.air-quality .info small {
+  font-size: 1.3rem;
+  color: #e7e6fb;
+}
+
+/*Sum Time*/
+.sun-chart-wrapper {
+  margin-top: 4rem;
+  height: 11rem;
+  position: relative;
+}
+.sun-chart {
+  --pos-x: 80;
+  margin: auto;
+
+  width: 21.6rem;
+  height: 21.6rem;
+  position: relative;
+}
+
+.sun-chart::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  background: #f6c833;
+  border-radius: 50%;
+
+  top: 50%;
+  left: 50%;
+  margin: -0.6rem;
+
+  transform: rotate(calc(1deg * (((100 - var(--pos-x)) / -100) * 180)))
+    translate(10.6rem);
+}
+
+.chart {
+  width: 21.6rem;
+  height: 10.8rem;
+  overflow: hidden;
+}
+
+.chart::before {
+  content: "";
+  width: 21.6rem;
+  height: 21.6rem;
+  display: block;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 96, 0.2) 0%,
+    rgba(251, 219, 96, 0) 101.89%
+  );
+
+  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+
+  rotate: calc(1.8deg * var(--pos-x));
+}
+
+.chart img {
+  position: absolute;
+  top: 0;
+  left: -1%;
+}
+
+time.now {
+  position: absolute;
+
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.time {
+  font-size: 1.2rem;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 1rem auto 0;
+  padding: 0 1.6rem 1.6rem;
+  max-width: 27.6rem;
 }
